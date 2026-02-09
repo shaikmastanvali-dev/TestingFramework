@@ -1,19 +1,11 @@
-node{
-    stage('Build'){
-        echo 'building a project'
-    }
-    stage('Verify Dotnet') {
-    steps {
-        bat 'dotnet --info'
-    }
-    }
-    stage('test'){
-        echo 'testing a project'
-    }
-    stage('deploy'){
-        echo 'release a project'
-    }
-    stage('release'){
-        echo 'release a project'
+pipeline {
+    agent any
+
+    stages {
+        stage('Test') {
+            steps {
+                bat 'dotnet --info'
+            }
+        }
     }
 }
