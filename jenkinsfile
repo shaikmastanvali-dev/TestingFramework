@@ -2,6 +2,11 @@ node{
     stage('Build'){
         echo 'building a project'
     }
+    stage('Verify Dotnet') {
+    steps {
+        bat 'dotnet --info'
+    }
+    }
     stage('test'){
         echo 'testing a project'
     }
